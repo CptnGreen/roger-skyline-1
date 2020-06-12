@@ -53,4 +53,4 @@
 - then =ssh-copy-id -p <PORT> -i ~/.ssh/id_rsa.pub ak@<IP>= to send pubkey on the VM
 - edit "PermitRootLogin", "PubkeyAuthentication" and "PasswordAuthentication" lines in config
 - restart sshd and try to ssh-connect using generated private key
--
+** Setup firewall

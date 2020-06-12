@@ -42,6 +42,7 @@
 - you can query ip address of your switch form host machine via =ifconfig=
 - then you use it to calculate free spot for your VM in the 4-address range mentioned
 - don't forget to assign at least 2 DNSs: cache (your gateway) and recursive (say, 8.8.8.8)
+- TROUBLESHOOTING: if (say, after reboot) host has reassigned switch's IP you'll need to edit network settings once again
 - check: =ifconfig= or =ip a s=, then =ping= something
 ** SSH: non-standard port, pubkeys, no-root
 - you can interact with sshd via =service sshd=
@@ -54,3 +55,4 @@
 - edit "PermitRootLogin", "PubkeyAuthentication" and "PasswordAuthentication" lines in config
 - restart sshd and try to ssh-connect using generated private key
 ** Setup firewall
+-

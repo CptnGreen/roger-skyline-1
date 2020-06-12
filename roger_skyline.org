@@ -6,9 +6,31 @@
 - to setup "turn Windows features on and off" ...
 ** Linux OS
 - CentOS 7 (RHEL 7 community clone)
-- download via torrent from centos.org
-- installation via graphic installer
+- downloaded via torrent from centos.org
+- installation via graphic installer (basic server + system administration tools)
+- check version: =cat /etc/centos-release=
 ** Disk size
-- 8 GB (fixed size)
-- size was chosen in the process of creating VM in Hyper-V
-- check: =cfdisk= or =lsblk=
+- you choose size in the process of creating VM in Hyper-V - you just type an integer in the corresponding field; BUT for some reason when you choose "8 GB" Windows creates a slightly larger disk
+- check: =lsblk -b=
+** Partitions
+- partitions were created during the installation process
+- they can be triffled with via =fdisk= or =parted= utility (=gparted= in GUI)
+- check: =parted -l= or =lsblk -b=
+** Packages
+- CentOS uses =yum= as a package manager which behaves just like apt but has nicer UI
+- packages can be updated via =yum update= and upgraded via =yum upgrade=
+- you can list all installed packages using =yum list installed=
+* V.3 Network and Security Part
+** Non-root user
+- non-root user "ak" was created during the installation process
+- you can create new users via =useradd= (use =-m= flag to also create standard folders in new user's home directory)
+- check: =cat /etc/passwd= or =getent passwd=
+** Special rights for the user
+- in order to allow user to execute commands with root priveleges he must be appended to the group with such rights ("root", "wheel", "adm")
+- you can add user to the group via =usermod -aG= (=-a= for append)
+- to make sure group has root access rights use =visudo= and uncomment certain lines if necessary
+- check: =id= or =groups=
+** Static IP with netmask 30
+- you can query existing interfaces and their ips via =ifconfig= or =ip a s=
+- per-interface settings are stored at /etc/sysconfig/network-scripts/ifcfg-<...>
+- a better way to interact with your network settings is though is via =nmtui= utility

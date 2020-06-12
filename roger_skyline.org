@@ -1,0 +1,14 @@
+#+TITLE: Roger Skyline
+
+* V.2 VM Part
+** Hypervisor
+- Hyper-V (Microsoft)
+- to setup "turn Windows features on and off" ...
+** Linux OS
+- CentOS 7 (RHEL 7 community clone)
+- download via torrent from centos.org
+- installation via graphic installer
+** Disk size
+- 8 GB (fixed size)
+- size was chosen in the process of creating VM in Hyper-V
+- check: =cfdisk= or =lsblk=

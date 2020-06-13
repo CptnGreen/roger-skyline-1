@@ -55,4 +55,13 @@
 - edit "PermitRootLogin", "PubkeyAuthentication" and "PasswordAuthentication" lines in config
 - restart sshd and try to ssh-connect using generated private key
 ** Setup firewall
--
+- CentOs utilizes firewalld daemon as a frontend for "classic" iptables
+- you can interact with firewalld via =firewall-cmd= command
+- here is a [[https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7][good article]] about firewall-cmd
+- you can remove service from a zone via =firewall-cmd --remove-service=<SERVICE> --permanent=
+- check: =firewall-cmd --list-all=
+** DOS attacks
+- =yum install epel-release= and =yum install fail2ban= to install fail2ban utility
+- then =systemctl enable fail2ban= and =systemctl start fail2ban=
+- edit /etc/fail2ban/jail.local
+- check: =fail2ban status= and =fail2ban status sshd=
